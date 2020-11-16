@@ -23,7 +23,8 @@ All databases are [implemented](https://github.com/orbitdb/orbit-db-store) on to
 
 #### Project status & support
 
-Status: **in active development**
+* Status: **in active development**
+* Compatible with **js-ipfs versions <= 0.46**
 
 ***NOTE!*** *OrbitDB is **alpha-stage** software. It means OrbitDB hasn't been security audited and programming APIs and data formats can still change. We encourage you to [reach out to the maintainers](https://gitter.im/orbitdb/Lobby) if you plan to use OrbitDB in mission critical systems.*
 
@@ -40,6 +41,7 @@ We also have regular community calls, which we announce in the issues in [the @o
 
 - [Usage](#usage)
   * [CLI](#cli)
+  * [Database browser UI](#database-browser-ui)
   * [Module with IPFS Instance](#module-with-ipfs-instance)
   * [Module with IPFS Daemon](#module-with-ipfs-daemon)
 - [API](#api)
@@ -69,14 +71,16 @@ Read the **[GETTING STARTED](https://github.com/orbitdb/orbit-db/blob/master/GUI
 
 For a more in-depth tutorial and exploration of OrbitDB's architecture, please check out the **[OrbitDB Field Manual](https://github.com/orbitdb/field-manual)**.
 
-### CLI
+### Database browser UI
 
-For the CLI tool to manage orbit-db database, see **[OrbitDB CLI](https://github.com/orbitdb/orbit-db-cli)**.
+OrbitDB databases can easily be managed using a web UI, see **[OrbitDB Control Center](https://github.com/orbitdb/orbit-db-control-center)**.
 
-It can be installed from npm with:
+Install and run it locally:
 
 ```
-npm install orbit-db-cli -g
+git clone https://github.com/orbitdb/orbit-db-control-center.git
+cd orbit-db-control-center/
+npm i && npm start
 ```
 
 ### Module with IPFS Instance
@@ -88,6 +92,7 @@ Install dependencies:
 ```
 npm install orbit-db ipfs
 ```
+
 
 ```javascript
 const IPFS = require('ipfs')
@@ -160,7 +165,8 @@ initIPFSInstance().then(ipfs => {
 ```
 
 ### Module with IPFS Daemon
-Alternatively, you can use [ipfs-api](https://npmjs.org/package/ipfs-api) to use `orbit-db` with a locally running IPFS daemon. Use this method if you're using `orbitd-db` to develop **backend** or **desktop** applications, eg. with [Electron](https://electron.atom.io).
+
+Alternatively, you can use [ipfs-http-client](https://www.npmjs.com/package/ipfs-http-client) to use `orbit-db` with a locally running IPFS daemon. Use this method if you're using `orbitd-db` to develop **backend** or **desktop** applications, eg. with [Electron](https://electron.atom.io).
 
 Install dependencies:
 
